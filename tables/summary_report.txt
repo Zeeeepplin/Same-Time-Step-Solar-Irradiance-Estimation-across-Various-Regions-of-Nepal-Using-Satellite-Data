@@ -1,0 +1,175 @@
+Solar Irradiance Prediction - Model Performance Tables
+============================================================
+Dataset1: held-out 20% of 2014-2022 data (test split)
+Dataset2: Jan-Sep 2023 evaluation data
+Regions:  Dhangadhi, Mustang, Nuwakot, Taplejung
+Models:   XGBoost, Random Forest, KNN, LSTM, ANN-MLP
+Metrics:  MAE, RMSE, MBE, R^2
+
+## Per-Region Performance on Dataset1 (Test Split)
+
+       Region          Model     MAE     RMSE     MBE     R2
+0   Dhangadhi        XGBoost 29.0655  55.3421  0.0403 0.9572
+1   Dhangadhi  Random Forest 25.5150  55.2779  0.5585 0.9573
+2   Dhangadhi            KNN 61.3093 104.7319 -4.9437 0.8466
+3   Dhangadhi           LSTM 28.7282  57.2841  1.7299 0.9541
+4   Dhangadhi        ANN-MLP 32.8832  64.1844 -2.6650 0.9424
+5     Mustang        XGBoost 28.6519  52.4323  0.1484 0.9580
+6     Mustang  Random Forest 26.7616  53.7690  0.1253 0.9559
+7     Mustang            KNN 54.0902  95.7748 -2.4530 0.8600
+8     Mustang           LSTM 29.0486  55.2479  4.7298 0.9534
+9     Mustang        ANN-MLP 33.7808  60.3546  4.6794 0.9444
+10    Nuwakot        XGBoost 29.0527  55.2683 -0.3206 0.9561
+11    Nuwakot  Random Forest 26.9884  56.0565  0.2524 0.9549
+12    Nuwakot            KNN 48.3523  85.4267 -3.5422 0.8952
+13    Nuwakot           LSTM 30.4979  59.7482  4.5129 0.9487
+14    Nuwakot        ANN-MLP 32.5224  62.5602  0.3475 0.9438
+15  Taplejung        XGBoost 26.7060  49.1305 -0.1727 0.9566
+16  Taplejung  Random Forest 25.2127  50.5119 -0.4971 0.9541
+17  Taplejung            KNN 41.8327  74.1592 -0.9219 0.9010
+18  Taplejung           LSTM 26.9191  52.1322  4.1885 0.9511
+19  Taplejung        ANN-MLP 28.8511  54.0035  0.6666 0.9475
+## Per-Region Performance on Dataset2 (2023)
+
+       Region          Model     MAE     RMSE      MBE     R2
+0   Dhangadhi        XGBoost 42.7579  78.7659   4.9366 0.9184
+1   Dhangadhi  Random Forest 36.2148  75.1698   2.1482 0.9257
+2   Dhangadhi            KNN 82.9948 135.1874  -6.2548 0.7596
+3   Dhangadhi           LSTM 39.9962  77.4302   6.4537 0.9211
+4   Dhangadhi        ANN-MLP 38.6400  73.7168  -4.2625 0.9285
+5     Mustang        XGBoost 38.2454  69.6033   0.4239 0.9292
+6     Mustang  Random Forest 33.2827  65.3148   2.8077 0.9377
+7     Mustang            KNN 68.8464 116.4942  -5.9939 0.8017
+8     Mustang           LSTM 35.1765  68.5111   3.7248 0.9314
+9     Mustang        ANN-MLP 37.6077  67.4102   5.9055 0.9336
+10    Nuwakot        XGBoost 44.1132  80.7081  -4.6242 0.9137
+11    Nuwakot  Random Forest 34.4737  68.5622   0.8102 0.9377
+12    Nuwakot            KNN 68.2302 113.8458 -11.1054 0.8284
+13    Nuwakot           LSTM 38.0805  73.3797  -3.4936 0.9287
+14    Nuwakot        ANN-MLP 36.7633  68.7982   1.0162 0.9373
+15  Taplejung        XGBoost 35.5859  64.6185  -2.6085 0.9267
+16  Taplejung  Random Forest 31.3384  60.8856   2.0204 0.9349
+17  Taplejung            KNN 52.6415  90.7678  -3.8078 0.8554
+18  Taplejung           LSTM 32.7468  62.4763  -1.8426 0.9315
+19  Taplejung        ANN-MLP 31.7202  58.6385  -4.1243 0.9396
+## Cross-Region MAE on Dataset1
+
+           XGBoost  Random Forest     KNN    LSTM  ANN-MLP
+Region                                                    
+Dhangadhi  29.0655        25.5150 61.3093 28.7282  32.8832
+Mustang    28.6519        26.7616 54.0902 29.0486  33.7808
+Nuwakot    29.0527        26.9884 48.3523 30.4979  32.5224
+Taplejung  26.7060        25.2127 41.8327 26.9191  28.8511
+## Cross-Region RMSE on Dataset1
+
+           XGBoost  Random Forest      KNN    LSTM  ANN-MLP
+Region                                                     
+Dhangadhi  55.3421        55.2779 104.7319 57.2841  64.1844
+Mustang    52.4323        53.7690  95.7748 55.2479  60.3546
+Nuwakot    55.2683        56.0565  85.4267 59.7482  62.5602
+Taplejung  49.1305        50.5119  74.1592 52.1322  54.0035
+## Cross-Region MBE on Dataset1
+
+           XGBoost  Random Forest     KNN   LSTM  ANN-MLP
+Region                                                   
+Dhangadhi   0.0403         0.5585 -4.9437 1.7299  -2.6650
+Mustang     0.1484         0.1253 -2.4530 4.7298   4.6794
+Nuwakot    -0.3206         0.2524 -3.5422 4.5129   0.3475
+Taplejung  -0.1727        -0.4971 -0.9219 4.1885   0.6666
+## Cross-Region R2 on Dataset1
+
+           XGBoost  Random Forest    KNN   LSTM  ANN-MLP
+Region                                                  
+Dhangadhi   0.9572         0.9573 0.8466 0.9541   0.9424
+Mustang     0.9580         0.9559 0.8600 0.9534   0.9444
+Nuwakot     0.9561         0.9549 0.8952 0.9487   0.9438
+Taplejung   0.9566         0.9541 0.9010 0.9511   0.9475
+## Cross-Region MAE on Dataset2
+
+           XGBoost  Random Forest     KNN    LSTM  ANN-MLP
+Region                                                    
+Dhangadhi  42.7579        36.2148 82.9948 39.9962  38.6400
+Mustang    38.2454        33.2827 68.8464 35.1765  37.6077
+Nuwakot    44.1132        34.4737 68.2302 38.0805  36.7633
+Taplejung  35.5859        31.3384 52.6415 32.7468  31.7202
+## Cross-Region RMSE on Dataset2
+
+           XGBoost  Random Forest      KNN    LSTM  ANN-MLP
+Region                                                     
+Dhangadhi  78.7659        75.1698 135.1874 77.4302  73.7168
+Mustang    69.6033        65.3148 116.4942 68.5111  67.4102
+Nuwakot    80.7081        68.5622 113.8458 73.3797  68.7982
+Taplejung  64.6185        60.8856  90.7678 62.4763  58.6385
+## Cross-Region MBE on Dataset2
+
+           XGBoost  Random Forest      KNN    LSTM  ANN-MLP
+Region                                                     
+Dhangadhi   4.9366         2.1482  -6.2548  6.4537  -4.2625
+Mustang     0.4239         2.8077  -5.9939  3.7248   5.9055
+Nuwakot    -4.6242         0.8102 -11.1054 -3.4936   1.0162
+Taplejung  -2.6085         2.0204  -3.8078 -1.8426  -4.1243
+## Cross-Region R2 on Dataset2
+
+           XGBoost  Random Forest    KNN   LSTM  ANN-MLP
+Region                                                  
+Dhangadhi   0.9184         0.9257 0.7596 0.9211   0.9285
+Mustang     0.9292         0.9377 0.8017 0.9314   0.9336
+Nuwakot     0.9137         0.9377 0.8284 0.9287   0.9373
+Taplejung   0.9267         0.9349 0.8554 0.9315   0.9396
+## Best Model per Region on Dataset1
+
+      Region       Best_MAE  Best_MAE_value      Best_RMSE  Best_RMSE_value       Best_MBE  Best_MBE_value        Best_R2  Best_R2_value
+0  Dhangadhi  Random Forest         25.5150  Random Forest          55.2779        XGBoost          0.0403  Random Forest         0.9573
+1    Mustang  Random Forest         26.7616        XGBoost          52.4323  Random Forest          0.1253        XGBoost         0.9580
+2    Nuwakot  Random Forest         26.9884        XGBoost          55.2683  Random Forest          0.2524        XGBoost         0.9561
+3  Taplejung  Random Forest         25.2127        XGBoost          49.1305        XGBoost         -0.1727        XGBoost         0.9566
+## Best Model per Region on Dataset2
+
+      Region       Best_MAE  Best_MAE_value      Best_RMSE  Best_RMSE_value       Best_MBE  Best_MBE_value        Best_R2  Best_R2_value
+0  Dhangadhi  Random Forest         36.2148        ANN-MLP          73.7168  Random Forest          2.1482        ANN-MLP         0.9285
+1    Mustang  Random Forest         33.2827  Random Forest          65.3148        XGBoost          0.4239  Random Forest         0.9377
+2    Nuwakot  Random Forest         34.4737  Random Forest          68.5622  Random Forest          0.8102  Random Forest         0.9377
+3  Taplejung  Random Forest         31.3384        ANN-MLP          58.6385           LSTM         -1.8426        ANN-MLP         0.9396
+## Long-Format Metrics (one row per region/model/dataset)
+
+       Region          Model   Dataset     MAE     RMSE      MBE     R2
+0   Dhangadhi        ANN-MLP  Dataset1 32.8832  64.1844  -2.6650 0.9424
+1   Dhangadhi            KNN  Dataset1 61.3093 104.7319  -4.9437 0.8466
+2   Dhangadhi           LSTM  Dataset1 28.7282  57.2841   1.7299 0.9541
+3   Dhangadhi  Random Forest  Dataset1 25.5150  55.2779   0.5585 0.9573
+4   Dhangadhi        XGBoost  Dataset1 29.0655  55.3421   0.0403 0.9572
+5     Mustang        ANN-MLP  Dataset1 33.7808  60.3546   4.6794 0.9444
+6     Mustang            KNN  Dataset1 54.0902  95.7748  -2.4530 0.8600
+7     Mustang           LSTM  Dataset1 29.0486  55.2479   4.7298 0.9534
+8     Mustang  Random Forest  Dataset1 26.7616  53.7690   0.1253 0.9559
+9     Mustang        XGBoost  Dataset1 28.6519  52.4323   0.1484 0.9580
+10    Nuwakot        ANN-MLP  Dataset1 32.5224  62.5602   0.3475 0.9438
+11    Nuwakot            KNN  Dataset1 48.3523  85.4267  -3.5422 0.8952
+12    Nuwakot           LSTM  Dataset1 30.4979  59.7482   4.5129 0.9487
+13    Nuwakot  Random Forest  Dataset1 26.9884  56.0565   0.2524 0.9549
+14    Nuwakot        XGBoost  Dataset1 29.0527  55.2683  -0.3206 0.9561
+15  Taplejung        ANN-MLP  Dataset1 28.8511  54.0035   0.6666 0.9475
+16  Taplejung            KNN  Dataset1 41.8327  74.1592  -0.9219 0.9010
+17  Taplejung           LSTM  Dataset1 26.9191  52.1322   4.1885 0.9511
+18  Taplejung  Random Forest  Dataset1 25.2127  50.5119  -0.4971 0.9541
+19  Taplejung        XGBoost  Dataset1 26.7060  49.1305  -0.1727 0.9566
+20  Dhangadhi        ANN-MLP  Dataset2 38.6400  73.7168  -4.2625 0.9285
+21  Dhangadhi            KNN  Dataset2 82.9948 135.1874  -6.2548 0.7596
+22  Dhangadhi           LSTM  Dataset2 39.9962  77.4302   6.4537 0.9211
+23  Dhangadhi  Random Forest  Dataset2 36.2148  75.1698   2.1482 0.9257
+24  Dhangadhi        XGBoost  Dataset2 42.7579  78.7659   4.9366 0.9184
+25    Mustang        ANN-MLP  Dataset2 37.6077  67.4102   5.9055 0.9336
+26    Mustang            KNN  Dataset2 68.8464 116.4942  -5.9939 0.8017
+27    Mustang           LSTM  Dataset2 35.1765  68.5111   3.7248 0.9314
+28    Mustang  Random Forest  Dataset2 33.2827  65.3148   2.8077 0.9377
+29    Mustang        XGBoost  Dataset2 38.2454  69.6033   0.4239 0.9292
+30    Nuwakot        ANN-MLP  Dataset2 36.7633  68.7982   1.0162 0.9373
+31    Nuwakot            KNN  Dataset2 68.2302 113.8458 -11.1054 0.8284
+32    Nuwakot           LSTM  Dataset2 38.0805  73.3797  -3.4936 0.9287
+33    Nuwakot  Random Forest  Dataset2 34.4737  68.5622   0.8102 0.9377
+34    Nuwakot        XGBoost  Dataset2 44.1132  80.7081  -4.6242 0.9137
+35  Taplejung        ANN-MLP  Dataset2 31.7202  58.6385  -4.1243 0.9396
+36  Taplejung            KNN  Dataset2 52.6415  90.7678  -3.8078 0.8554
+37  Taplejung           LSTM  Dataset2 32.7468  62.4763  -1.8426 0.9315
+38  Taplejung  Random Forest  Dataset2 31.3384  60.8856   2.0204 0.9349
+39  Taplejung        XGBoost  Dataset2 35.5859  64.6185  -2.6085 0.9267
